@@ -1,0 +1,45 @@
+﻿@using System.Data
+@model DataTable
+@{
+    ViewBag.Title = "ActualizarResultadosFicha";
+    Layout = "~/Views/Shared/WebPage1.cshtml";
+}
+
+<h2>ActualizarResultadosFicha</h2>
+
+<table class="table">
+    <tr>
+        <td>id detalle</td>
+        <td>id encabezado</td>
+        <td>nombre examen</td>
+        <td>resultado examen</td>
+        <td>diagnostico</td>
+        <td>Enfermero</td>
+        <td>Medico especialista</td>
+        <td>Medicamento</td>
+        <td>cantidad</td>
+        <td>receta</td>
+        <td>observacion</td>
+        <td></td>
+    </tr> 
+        @foreach(DataRow r in Model.Rows)
+        {
+            <tr>
+                <td>@Convert.ToString(r["idFichaDetalle"])</td>
+                <td>@Convert.ToString(r["fk_idCita_Ficha"])</td>
+                <td>@Convert.ToString(r["Examen"])</td>
+                <td>@Convert.ToString(r["resultadoExamen"])</td>
+                <td>@Convert.ToString(r["diagnostico"])</td>
+                <td>@Convert.ToString(r["Enfermero"])</td>
+                <td>@Convert.ToString(r["Medico_Espacialista"])</td>
+                <td>@Convert.ToString(r["Medicamento"])</td>
+                <td>@Convert.ToString(r["cantidad"])</td>
+                <td>@Convert.ToString(r["RecetaMedica"])</td>
+                <td>@Convert.ToString(r["observacion"])</td>
+                <td>@Html.ActionLink("Editar", "EditarDetalleFicha", new { idFichaDetalle = Convert.ToString(r["idFichaDetalle"]) })</td>
+            </tr>
+        }
+
+</table>
+
+

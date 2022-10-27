@@ -1,0 +1,34 @@
+﻿@model Proyecto.Models.FichaDetalle
+@{
+    ViewBag.Title = "GuardarDetalle";
+    Layout = "~/Views/Shared/WebPage1.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        ASIGNAR DETALLE A LA FICHA CREADA
+    </div>
+    <div class="card-body">
+        <form action="@Url.Action("GuardarDetalle","Cita_Ficha")" method="post">
+            <div class="mb-3">
+                @Html.DropDownList("fk_idExamen",ViewBag.ListarExamen as List<SelectListItem>,new { @class="form-control"})
+            </div>
+            <div class="mb-3">
+                <label class="form-label">ID Medico Especialista</label>
+                <input name="fk_idPersonalMedico_especialista" type="number" class="form-control">
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">ID Enfermero</label>
+                <input name="fk_idPersonalMedico_Enfermero" type="number" class="form-control">
+
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            @Html.ActionLink("Lista de Fichas", "Listar", "Cita_Ficha")
+        </form>
+    </div>
+</div>
+
+
+

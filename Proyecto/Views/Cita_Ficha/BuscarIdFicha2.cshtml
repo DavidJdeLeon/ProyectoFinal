@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "BuscarIdFicha2";
+    Layout = "~/Views/Shared/WebPage1.cshtml";
+}
+
+<h2>Buscar Ficha a Finalizar</h2>
+
+<form action="@Url.Action("BuscarIdFicha2","Cita_Ficha")" method="post" class="card text-center justify-content-md-center" style="width: 50rem; margin-left:19%; margin-top:10%">
+    <div>
+        <label class="form-label">Buscar Numero de Cita/Ficha</label>
+        <input name="idFicha" type="number" class="form-control" placeholder="Numero de Cita/Ficha">
+    </div>
+    <button type="submit" class="btn btn-primary">BUSCAR Y FINALIZAR</button>
+</form>

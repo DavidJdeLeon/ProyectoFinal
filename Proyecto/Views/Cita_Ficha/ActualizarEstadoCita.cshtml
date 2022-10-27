@@ -1,0 +1,32 @@
+﻿@using System.Data
+@model DataTable
+@{
+    ViewBag.Title = "ActualizarEstadoCita";
+    Layout = "~/Views/Shared/WebPage1.cshtml";
+}
+
+<h2>ActualizarEstadoCita</h2>
+<table class="table">
+    <tr>
+        <td>id Ficha</td>
+        <td>Fecha</td>
+        <td>Nombre</td>
+        <td>Apellido</td>
+        <td>Motivo Visita</td>
+        <td>Estado Visita</td>
+        <td>Observacion</td>
+    </tr>
+    @foreach (DataRow r in Model.Rows)
+    {
+        <tr>
+            <td>@Convert.ToString(r["idCita_Ficha"])</td>
+            <td>@Convert.ToString(r["fecha"])</td>
+            <td>@Convert.ToString(r["nombre"])</td>
+            <td>@Convert.ToString(r["apeliido"])</td>
+            <td>@Convert.ToString(r["motivo visita"])</td>
+            <td>@Convert.ToString(r["Estado visita"])</td>
+            <td>@Convert.ToString(r["observacion"])</td>
+        </tr>
+    }
+
+</table>

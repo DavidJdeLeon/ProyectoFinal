@@ -1,0 +1,32 @@
+﻿@using System.Data
+@model DataTable
+@{
+    ViewBag.Title = "ReporteCostoFichaId";
+    Layout = "~/Views/Shared/WebPage1.cshtml";
+}
+
+<h2>ReporteCostoFichaId</h2>
+<table class="table">
+    <tr>
+        <td>id Cita/Ficha</td>
+        <td>Examen</td>
+        <td>Costo Examen</td>
+        <td>Medicamento</td>
+        <td>Cantidad Medicamento</td>
+        <td>Costo Medicamento</td>
+        <td>Total</td>
+    </tr>
+    @foreach (DataRow r in Model.Rows)
+    {
+        <tr>
+            <td>@Convert.ToString(r["idCita_Ficha"])</td>
+            <td>@Convert.ToString(r["Examen"])</td>
+            <td>@Convert.ToString(r["CostoExamen"])</td>
+            <td>@Convert.ToString(r["Medicamento"])</td>
+            <td>@Convert.ToString(r["CantidadMedicamento"])</td>
+            <td>@Convert.ToString(r["CostoMedicamentoTotal"])</td>
+            <td>@Convert.ToString(r["Total"])</td>
+        </tr>
+    }
+
+</table>

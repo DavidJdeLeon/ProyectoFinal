@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Proyecto.Models.FichaClinica>
+@{
+    ViewBag.Title = "Listar";
+    Layout = "~/Views/Shared/WebPage1.cshtml";
+}
+@section Styles
+{
+
+    <link href="~/lib/datatables.net-bs4/dataTables.bootstrap4.min.css" rel="stylesheet" />
+
+}
+<div class="card">
+    <div class="card-header">
+        Lista de Encabezados de Cita-Ficha
+    </div>
+
+    @Html.ActionLink("Crear Ficha", "Guardar", "Cita_Ficha")
+
+</div>
+<div style="position:relative;width:94%">
+    <table id="Tabla" class="table">
+        <thead>
+            <tr>
+                <th>idCita_Ficha</th>
+                <th>fecha</th>
+                <th>hora</th>
+                <th>nombre</th>
+                <th>apellido</th>
+                <th>motivo visita</th>
+                <th>estado visita</th>
+                <th>observacion</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.idCita_Ficha</td>
+                    <td>@item.fecha</td>
+                    <td>@item.hora</td>
+                    <td>@item.nombre</td>
+                    <td>@item.apellido</td>
+                    <td>@item.motivoCita</td>
+                    <td>@item.estadoVisita</td>
+                    <td>@item.observacion</td>
+                </tr>
+            }
+        </tbody>
+       
+    </table>
+</div>
+    @section scripts
+{
+        <script src="~/lib/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="~/lib/datatables.net-bs4/dataTables.bootstrap4.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#Tabla').DataTable();
+            });
+        </script>
+    }

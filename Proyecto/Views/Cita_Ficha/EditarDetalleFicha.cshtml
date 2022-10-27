@@ -1,0 +1,50 @@
+﻿@model Proyecto.Models.FichaClinica_FichaDetalle
+@{
+    ViewBag.Title = "EditarDetalleFicha";
+    Layout = "~/Views/Shared/WebPage1.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        ASIGNAR DETALLE A LA FICHA CREADA
+    </div>
+    <div class="card-body">
+        <form action="@Url.Action("EjecutarEditarDetalleFicha","Cita_Ficha")" method="post">
+            <div class="mb-3">
+                <label class="form-label">Id Detalle</label>
+                <input name="idFichaDetalle" type="text" class="form-control" value="@ViewBag.idFichaDetalle_">
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Resultado Examen</label>
+                <input name="resultadoExamen" type="text" class="form-control">
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Diagnostico</label>
+                <input name="diagnostico" type="text" class="form-control" value="N/A">
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Medicamento</label>
+                @Html.DropDownList("fk_idMedicamento", ViewBag.listaMedicamentos as List<SelectListItem>, new { @class = "form-control" })
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Cantidad</label>
+                <input name="cantidad" type="number" class="form-control">
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Receta</label>
+                <input name="recetaMedica" type="text" class="form-control" value="N/A">
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Observacion</label>
+                <input name="observacion" type="text" class="form-control" value="N/A">
+
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+</div>

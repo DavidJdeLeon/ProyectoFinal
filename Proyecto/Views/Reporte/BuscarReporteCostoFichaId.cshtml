@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "BuscarReporteCostoFichaId";
+    Layout = "~/Views/Shared/WebPage1.cshtml";
+}
+
+<h2>Reporte Costos de Ficha</h2>
+<form action="@Url.Action("ReporteCostoFichaId","Reporte")" method="post" class="card text-center justify-content-md-center" style="width: 50rem; margin-left:19%; margin-top:10%">
+    <div>
+        <label class="form-label">Buscar Numero de Cita/Ficha</label>
+        <input name="idFicha" type="number" class="form-control" placeholder="Numero de Cita/Ficha">
+    </div>
+    <button type="submit" class="btn btn-primary">BUSCAR</button>
+</form>

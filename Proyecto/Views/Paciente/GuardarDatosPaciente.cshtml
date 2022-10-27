@@ -1,0 +1,72 @@
+﻿@model Proyecto.Models.Paciente
+@{
+    ViewBag.Title = "GuardarDatosPaciente";
+    Layout = "~/Views/Shared/WebPage1.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        REGISTRAR NUEVO PACIENTE
+    </div>
+    <div class="card-body">
+        <form action="@Url.Action("GuardarDatosPaciente","Paciente")" method="post">
+            <div class="mb-3">
+                <label class="form-label">DPI</label>
+                <input name="dpi" type="text" class="form-control" value="N/A">
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Nit</label>
+                <input name="nit" type="text" class="form-control" value="N/A">
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input name="nombre" type="text" class="form-control">
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Apellido</label>
+                <input name="apeliido" type="text" class="form-control">
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Año Nacimiento</label>
+                <input name="anioNacimiento" type="date" class="form-control">
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Correo</label>
+                <input name="correo" type="text" class="form-control" value="N/A">
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Telefono</label>
+                <input name="telefono" type="text" class="form-control" value="N/A">
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Dirección</label>
+                <input name="direccion" type="text" class="form-control" value="N/A">
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Sexo</label>
+                @Html.DropDownList("sexo", ViewBag.Sexo as List<SelectListItem>, new { @class = "form-control" })
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Estatura metros</label>
+                <input name="estatura" type="text" class="form-control" value="0">
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Tipo Sangre</label>
+                <input name="tipoSangre" type="text" class="form-control" value="N/A">
+
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+</div>
+

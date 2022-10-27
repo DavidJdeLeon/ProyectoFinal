@@ -1,0 +1,48 @@
+﻿@model Proyecto.Models.FichaClinica
+@{
+    ViewBag.Title = "Guardar";
+    Layout = "~/Views/Shared/WebPage1.cshtml";
+
+}
+
+<div class="card">
+    <div class="card-header">
+        CREAR NUEVA CITA/FICHA
+    </div>
+    <div class="card-body">
+        <form action="@Url.Action("Guardar","Cita_Ficha")" method="post">
+            <div class="mb-3">
+                <label class="form-label">Fecha</label>
+                <input name="fecha" type="date" class="form-control">
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Hora</label>
+                <input name="hora" type="time" class="form-control">
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Paciente</label>
+                <input name="fk_idPaciente" type="number" class="form-control">
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Motivo Visita</label>
+                @Html.DropDownList("fk_idMotivoCita", ViewBag.ListadoMotivoCita as List<SelectListItem>, new { @class = "form-control" })
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Estado Visita</label>
+                @Html.DropDownList("fk_idEstadoVisita", ViewBag.ListadoEstadoVisita as List<SelectListItem>, new { @class = "form-control" })
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Observación</label>
+                <input name="observacion" type="text" class="form-control" value="N/A">
+
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            @Html.ActionLink("Lista de Fichas", "Listar", "Cita_Ficha")
+        </form>
+    </div>
+</div>
+

@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+    <div class="navbar1">
+        @Html.ActionLink("INICIO", "FichaClinica", "Home")
+        <div class="dropdown1">
+
+            <button class="dropbtn1">
+                PACIENTE
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content1">
+                @Html.ActionLink("Nuevo Paciente", "GuardarDatosPaciente", "Paciente")
+                @Html.ActionLink("Listar Pacientes", "ListarPacientes", "Paciente")
+                <a href="#">Link 3</a>
+            </div>
+        </div>
+        <div class="dropdown1">
+            <button class="dropbtn1">
+                REPORTES
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content1">
+                @Html.ActionLink("Rep. Costo por Numero Ficha", "BuscarReporteCostoFichaId", "Reporte")
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </div>
+        <div class="dropdown1">
+            <button class="dropbtn1">
+                FICHA CLINICA
+                <i class="fa fa-caret-down1"></i>
+            </button>
+            <div class="dropdown-content1">
+                @Html.ActionLink("Nueva Ficha", "Guardar", "Cita_Ficha")
+                @Html.ActionLink("Buscar Ficha", "BuscarIdFicha", "Cita_Ficha")
+                @Html.ActionLink("Finalizar Ficha", "BuscarIdFicha2", "Cita_Ficha")
+            </div>
+        </div>
+        <div class="dropdown1">
+            <button class="dropbtn1">
+                FINANZAS
+                <i class="fa fa-caret-down1"></i>
+            </button>
+            <div class="dropdown-content1">
+                @Html.ActionLink("Rep. Transcion*Fecha", "EstadoFinancieroFechas", "Finanza")
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </div>
+    </div>
+    <div class="contenedor_body">
+        @RenderBody()
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

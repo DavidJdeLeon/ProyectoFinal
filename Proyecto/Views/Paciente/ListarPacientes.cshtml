@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Proyecto.Models.Paciente>
+@{
+    ViewBag.Title = "ListarPacientes";
+    Layout = "~/Views/Shared/WebPage1.cshtml";
+}
+@section Styles
+{
+
+    <link href="~/lib/datatables.net-bs4/dataTables.bootstrap4.min.css" rel="stylesheet" />
+
+}
+<h2 style="margin-bottom:0%">ListarPacientes</h2>
+
+<div style="position:relative; left:6%;width:94%">
+    <table id="Tabla" class="table">
+        <thead>
+            <tr>
+                <td>Id paciente</td>
+                <td>DPI</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Telefono</td>
+                <td>Correo</td>
+                <td>Año nacimiento</td>
+                <td>Direccion</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.idPaciente</td>
+                    <td>@item.dpi</td>
+                    <td>@item.nombre</td>
+                    <td>@item.apeliido</td>
+                    <td>@item.telefono</td>
+                    <td>@item.correo</td>
+                    <td>@item.anioNacimiento</td>
+                    <td>@item.direccion</td>
+                </tr>
+            }
+        </tbody>
+
+
+    </table>
+
+</div>
+
+
+@section scripts
+{
+    <script src="~/lib/datatables.net/jquery.dataTables.min.js"></script>
+    <script src="~/lib/datatables.net-bs4/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#Tabla').DataTable();
+        });
+    </script>
+}
