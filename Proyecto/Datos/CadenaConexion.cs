@@ -7,7 +7,7 @@ namespace Proyecto.Datos
 {
     public class CadenaConexion
     {
-        private string cadenaConexion = @"Data Source=LAPTOP-4NELPGNL\SQLEXPRESS;Initial Catalog=ProyectoAnalisis;Integrated Security=True";
+        private string cadenaConexion = @"Data Source=SQL8003.site4now.net;Initial Catalog=db_a8cb3f_ddeleon;User Id=db_a8cb3f_ddeleon_admin;Password=david123";
 
         public string CConexion
         {

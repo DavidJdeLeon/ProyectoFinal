@@ -1,0 +1,37 @@
+﻿@using System.Data
+@model DataTable
+@{
+    ViewBag.Title = "EncabezadoPagoficha";
+    Layout = "~/Views/Shared/WebPage1.cshtml";
+}
+
+<h2>Pago de Ficha Clinica</h2>
+
+<table class="table">
+    <tr>
+        <td>id ficha</td>
+        <td>fecha</td>
+        <td>paciente</td>
+        <td>motivo cita</td>
+        <td>estado visita</td>
+        <td>observaciones</td>
+        <td>costo total</td>
+        <td>saldo pendiente</td>
+        <td></td>
+    </tr>
+    @foreach (DataRow r in Model.Rows)
+    {
+        <tr>
+            <td>@Convert.ToString(r["idCita_Ficha"])</td>
+            <td>@Convert.ToString(r["fecha"])</td>
+            <td>@Convert.ToString(r["paciente"])</td>
+            <td>@Convert.ToString(r["motivo cita"])</td>
+            <td>@Convert.ToString(r["estado visita"])</td>
+            <td>@Convert.ToString(r["observacion"])</td>
+            <td>@Convert.ToString(r["costoTotal"])</td>
+            <td>@Convert.ToString(r["SaldoPendiente"])</td>
+            <td>@Html.ActionLink("PAGAR", "EditarMontoPagoFicha", new { idFicha = Convert.ToString(r["idCita_Ficha"]) })</td>
+        </tr>
+    }
+
+</table>

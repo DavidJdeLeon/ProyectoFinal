@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "EditarMontoPagoFicha";
+    Layout = "~/Views/Shared/WebPage1.cshtml";
+}
+
+
+<div class="card">
+    <div class="card-header">
+        CANCELAR MONTO DE FICHA
+    </div>
+    <div class="card-body">
+        <form action="@Url.Action("EjecutarEditarDetalleFicha","Finanza")" method="post">
+            <div class="mb-3">
+                <label class="form-label">Id Detalle</label>
+                <input name="IdFicha" type="text" class="form-control" value="@ViewBag.idFicha">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Resultado Examen</label>
+                <input name="pago" type="text" class="form-control">
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+</div>

@@ -22,7 +22,6 @@
             <div class="dropdown-content1">
                 @Html.ActionLink("Nuevo Paciente", "GuardarDatosPaciente", "Paciente")
                 @Html.ActionLink("Listar Pacientes", "ListarPacientes", "Paciente")
-                <a href="#">Link 3</a>
             </div>
         </div>
         <div class="dropdown1">
@@ -32,8 +31,6 @@
             </button>
             <div class="dropdown-content1">
                 @Html.ActionLink("Rep. Costo por Numero Ficha", "BuscarReporteCostoFichaId", "Reporte")
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
             </div>
         </div>
         <div class="dropdown1">
@@ -54,8 +51,8 @@
             </button>
             <div class="dropdown-content1">
                 @Html.ActionLink("Rep. Transcion*Fecha", "EstadoFinancieroFechas", "Finanza")
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+                @Html.ActionLink("Rep. Transcion*Numero Ficha", "EstadoFinancieroIdFicha", "Finanza")
+                @Html.ActionLink("Pago Ficha", "BuscarFichaPago", "Finanza")
             </div>
         </div>
     </div>

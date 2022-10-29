@@ -219,7 +219,6 @@
     <Content Include="Scripts\bootstrap.esm.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
-    <Content Include="ClassDiagram1.cd" />
     <None Include="Properties\PublishProfiles\ddeleon-001-site1 - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\ddeleon-001-site1 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -280,6 +279,11 @@
     <Content Include="Views\Reporte\BuscarReporteCostoFichaId.cshtml" />
     <Content Include="Views\Finanza\EstadoFinancieroFechas.cshtml" />
     <Content Include="Views\Finanza\ListarEstadoFinancieroFechas.cshtml" />
+    <Content Include="Views\Finanza\BuscarFichaPago.cshtml" />
+    <Content Include="Views\Finanza\EncabezadoPagoficha.cshtml" />
+    <Content Include="Views\Finanza\EditarMontoPagoFicha.cshtml" />
+    <Content Include="Views\Finanza\EstadoFinancieroIdFicha.cshtml" />
+    <Content Include="Views\Finanza\ListarEstadoFinancieroIdFicha.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

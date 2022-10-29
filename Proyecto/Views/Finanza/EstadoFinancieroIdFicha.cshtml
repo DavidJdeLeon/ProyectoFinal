@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "EstadoFinancieroIdFicha";
+    Layout = "~/Views/Shared/WebPage1.cshtml";
+}
+
+<div class="card text-center justify-content-md-center" style="width: 50rem; margin-left:19%; margin-top:10%">
+    <div class="card-header">
+        Estado Financiero por Fechas
+    </div>
+    <div class="card-body">
+        <form action="@Url.Action("ListarEstadoFinancieroIdFicha","Finanza")" method="post">
+            <div class="mb-3">
+                <label class="form-label">Numero de Ficha</label>
+                <input name="idFicha" type="number" class="form-control">
+
+            </div>
+            <button type="submit" class="btn btn-primary">Generar</button>
+        </form>
+    </div>
+</div>
+

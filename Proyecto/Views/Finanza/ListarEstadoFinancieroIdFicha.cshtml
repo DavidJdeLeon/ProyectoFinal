@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Proyecto.Models.TransaccionContable>
+@{
+    ViewBag.Title = "ListarEstadoFinancieroIdFicha";
+    Layout = "~/Views/Shared/WebPage1.cshtml";
+}
+
+@section Styles
+{
+
+    <link href="~/lib/datatables.net-bs4/dataTables.bootstrap4.min.css" rel="stylesheet" />
+
+}
+<h2 style="margin-bottom:0%">Transacciones Contables</h2>
+
+<div style="position:relative; left:6%;width:94%">
+    <table id="Tabla" class="table">
+        <thead>
+            <tr>
+                <td>idTransaccionContable</td>
+                <td>CCU</td>
+                <td>DescripcionCCU</td>
+                <td>CC</td>
+                <td>DescripcionCC</td>
+                <td>Fecha</td>
+                <td>Motivo</td>
+                <td>IdCitaCosto</td>
+                <td>Debe</td>
+                <td>Haber</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.idTransaccionContable</td>
+                    <td>@item.CCU</td>
+                    <td>@item.DescripcionCCU</td>
+                    <td>@item.CC</td>
+                    <td>@item.DescripcionCC</td>
+                    <td>@item.Fecha</td>
+                    <td>@item.Motivo</td>
+                    <td>@item.idCitaCosto</td>
+                    <td>@item.Debe</td>
+                    <td>@item.Haber</td>
+                </tr>
+            }
+        </tbody>
+
+
+    </table>
+
+</div>
+
+
+@section scripts
+{
+    <script src="~/lib/datatables.net/jquery.dataTables.min.js"></script>
+    <script src="~/lib/datatables.net-bs4/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#Tabla').DataTable();
+        });
+    </script>
+}
+
